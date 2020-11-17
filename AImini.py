@@ -13,3 +13,8 @@ le = LabelEncoder()
 x['Gender'] = le.fit_transform(x['Gender'])
 print(x)
 
+'''from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remainder='passthrough')
+x = ct.fit_transform(x)'''
+
