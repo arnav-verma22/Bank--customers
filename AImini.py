@@ -18,3 +18,9 @@ from sklearn.compose import ColumnTransformer
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remainder='passthrough')
 x = ct.fit_transform(x)'''
 
+dummies = pd.get_dummies(x['Geography'])
+x = pd.concat([x, dummies], axis=1)
+x.drop(columns=['Geography'], inplace=True)
+print(x)
+
+
