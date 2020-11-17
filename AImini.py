@@ -23,4 +23,7 @@ x = pd.concat([x, dummies], axis=1)
 x.drop(columns=['Geography'], inplace=True)
 print(x)
 
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+x = sc.fit_transform(x)
 
