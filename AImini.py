@@ -38,4 +38,8 @@ ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
 ann.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 ann.fit(x_train, y_train, batch_size=32, epochs=100)
 
+y_pred = ann.predict(x_test)
+y_pred = (y_pred > 0.5)
+#print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
 
